@@ -31,15 +31,19 @@ def msb_trunc(a:int, n:int):
     return a
 
 def add_with_lsb_trunc(a:int, b:int, n:int):
+    '''perform lsb_trunc after ADD operation'''
     return lsb_trunc(a + b, n)
 
 def mul_with_lsb_trunc(a:int, b:int, n:int):
+    '''perform lsb_trunc after MUL operation'''
     return lsb_trunc(a * b, n)
 
 def add_with_msb_trunc(a:int, b:int, n:int):
+    '''perform msb_trunc after ADD operation'''
     return msb_trunc(a + b, n)
 
 def mul_with_msb_trunc(a:int, b:int, n:int):
+    '''perform msb_trunc after MUL operation'''
     return msb_trunc(a * b, n)
 
 if __name__ == '__main__':
