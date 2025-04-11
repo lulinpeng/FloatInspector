@@ -105,21 +105,21 @@ class FloatInspector:
         exponent = FloatInspector.get_float64_exponent(f)
         return f"{sign}.{mantissa}" if exponent == 0 else f"{sign}.{mantissa} x 2^{{{exponent}}}"
 
-print(f'random number: {FloatInspector.random_n_bit_number(64)}')
+if __name__ == '__main__':
+    print(f'random number: {FloatInspector.random_n_bit_number(64)}')
+    f = -0.001
+    
+    print(f'binary representation: {FloatInspector.float64_to_bin(f)}')
 
-f = -0.001
+    print(f'sign bits: {FloatInspector.get_float64_sign_bin(f)}')
 
-print(f'binary representation: {FloatInspector.float64_to_bin(f)}')
+    print(f'magnitude bits: {FloatInspector.get_float64_magnitude_bin(f)}')
 
-print(f'sign bits: {FloatInspector.get_float64_sign_bin(f)}')
+    print(f'mantissa bits: {FloatInspector.get_float64_mantissa_bin(f)}')
 
-print(f'magnitude bits: {FloatInspector.get_float64_magnitude_bin(f)}')
+    print(f'split_print: {FloatInspector.split_print(f)}')
 
-print(f'mantissa bits: {FloatInspector.get_float64_mantissa_bin(f)}')
-
-print(f'split_print: {FloatInspector.split_print(f)}')
-
-print(f'scientific_print: {FloatInspector.scientific_notation_print(f)}')
+    print(f'scientific_print: {FloatInspector.scientific_notation_print(f)}')
 
 
 

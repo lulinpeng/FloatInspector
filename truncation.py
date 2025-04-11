@@ -33,13 +33,14 @@ def add_with_msb_trunc(a:int, b:int, n:int):
 def mul_with_msb_trunc(a:int, b:int, n:int):
     return msb_trunc(a * b, n)
 
-a = 100
-b = 100
-n = 10 # bit width
-c = a * b
-print(f'a = {a}')
-print(f'b = {b}')
-print(f'bit width = {n}\n')
-print(f'a * b = {a * b}')
-print(f'mul_with_lsb_trunc(a, b, n) = {mul_with_lsb_trunc(a, b, n)}')
-print(f'mul_with_msb_trunc(a, b, n) = {mul_with_msb_trunc(a, b, n)}')
+if __name__ == '__main__':
+    a = 100
+    b = 100
+    n = 10 # bit width
+    c = a * b
+    print(f'a = {a}')
+    print(f'b = {b}')
+    print(f'bit width = {n}\n')
+    print(f'a * b = {a * b}')
+    print(f'mul_with_lsb_trunc(a, b, n) = {mul_with_lsb_trunc(a, b, n)}')
+    print(f'mul_with_msb_trunc(a, b, n) = {mul_with_msb_trunc(a, b, n)}')
