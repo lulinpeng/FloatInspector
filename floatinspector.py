@@ -1,6 +1,7 @@
 import random
 import struct
 import math
+import argparse
 
 BYTE_BIT_LEN = 8
 FLOAT64_MAGNITUDE_BIT_LEN = 11
@@ -95,7 +96,7 @@ class FloatInspector:
     @staticmethod
     def split_print(f:float):
         '''return sign/magnitude/mantissa in bit-form seperately'''
-        return f'{FloatInspector.get_float64_sign(f)}, {FloatInspector.get_float64_magnitude_bin(f)}, {FloatInspector.get_float64_mantissa_bin(f)}'
+        return f'sign, magnitude, mantissa = {FloatInspector.get_float64_sign(f)}, {FloatInspector.get_float64_magnitude_bin(f)}, {FloatInspector.get_float64_mantissa_bin(f)}'
 
     @staticmethod
     def scientific_notation_print(f:float):
@@ -106,21 +107,12 @@ class FloatInspector:
         return f"{sign}.{mantissa}" if exponent == 0 else f"{sign}.{mantissa} x 2^{{{exponent}}}"
 
 if __name__ == '__main__':
-    print(f'random number: {FloatInspector.random_n_bit_number(64)}')
-    f = -0.001
-    
-    print(f'binary representation: {FloatInspector.float64_to_bin(f)}')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--value', type=float, default=4.2, help='a float64 number')
+    args = parser.parse_args()
 
-    print(f'sign bits: {FloatInspector.get_float64_sign_bin(f)}')
-
-    print(f'magnitude bits: {FloatInspector.get_float64_magnitude_bin(f)}')
-
-    print(f'mantissa bits: {FloatInspector.get_float64_mantissa_bin(f)}')
-
-    print(f'split_print: {FloatInspector.split_print(f)}')
-
-    print(f'scientific_print: {FloatInspector.scientific_notation_print(f)}')
-
-
-
-
+    f = args.value
+    print(f'input: {f} {type(f)}')
+    print(f'{FloatInspector.float64_to_bin(f)}')
+    print(f'{FloatInspector.split_print(f)}')
+    print(f'{FloatInspector.scientific_notation_print(f)}')
