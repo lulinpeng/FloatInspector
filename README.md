@@ -32,7 +32,7 @@ python floatinspector.py --value 3.14
 |FP8 (E5M3) | 1 | 5 | 2 | 8| - | NVIDIA H100, AMD CDNA3 | 
 |FP4 (E2M1) | 1 | 2 | 1 | 4| - | Experimental hardware (some AI accelerators/FPGAs) |
 |FP4 (E3M0) | 1 | 3 | 0 | 4| - | Research prototypes (e.g., custom chips) |
-|TF32 | 1 | 8 | 10 | 19| TensorFloat-32 (occupy 32 bits, but only 19 bits in computation)| NVIDIA A100, H100 GPUs | 
+|TF32 | 1 | 8 | 10 | 19| TensorFloat-32 | NVIDIA A100, H100 GPUs | 
 |BF16 | 1 | 8 | 7 | 16| brain floating point | Google TPU, NVIDIA Ampere/Ada GPUs | 
 
 Note that *TF32 uses 32-bit storage but only 19 bits (1 sign + 8 exponent + 10 mantissa) in computation.*
